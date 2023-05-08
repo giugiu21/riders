@@ -1,6 +1,8 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { MaterialExampleModule } from 'src/material.module';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { ToastModule } from 'primeng/toast';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -22,7 +24,10 @@ import { FooterComponent } from './shared/footer/footer.component';
     AppRoutingModule,
     BrowserAnimationsModule,
     MaterialExampleModule,
-    NgbModule
+    NgbModule,
+    FormsModule,
+    ReactiveFormsModule,
+    ToastModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
