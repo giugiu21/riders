@@ -3,8 +3,7 @@ import { Vehicles } from "./vehicles.model";
 import { User } from "./user.model";
 
 export interface Rider {
-    _id: string;
-    user: User;
+    _id: number;
     phoneNumber: string;
     firstName: string;
     lastName: string;

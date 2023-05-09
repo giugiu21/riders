@@ -11,13 +11,17 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { HomeComponent } from './components/home/home.component';
 import { HeaderComponent } from './shared/header/header.component';
 import { FooterComponent } from './shared/footer/footer.component';
+import { HomeRiderComponent } from './components/home-rider/home-rider.component';
+import { HomeOwnerComponent } from './components/home-owner/home-owner.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
     HeaderComponent,
-    FooterComponent
+    FooterComponent,
+    HomeRiderComponent,
+    HomeOwnerComponent
   ],
   imports: [
     BrowserModule,

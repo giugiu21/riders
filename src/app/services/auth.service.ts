@@ -14,7 +14,11 @@ export class AuthService {
     const user = {
       username: res.username,
       password: res.password,
+      token: res.token,
+      rider_Id: res.rider_Id,
+      restaurantOwner_Id: res.rider_Id,
     }
+    
     localStorage.setItem('user', JSON.stringify(user));
   }
 
@@ -29,6 +33,5 @@ export class AuthService {
 
   logout(): void{
     localStorage.removeItem('user');
-    this.UserService.userRole.next('');
   }
 }

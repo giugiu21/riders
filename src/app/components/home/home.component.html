@@ -50,7 +50,13 @@
 </div>
 
 
-<div *ngIf="authService.isLogged()">
+<!-- <div *ngIf="authService.isLogged()">
+    <div *ngIf="this.user.rider_Id != 0">
+        <h2>Hello Rider</h2>
+    </div>
+    <div *ngIf="this.user.restaurantOwner_Id != 0">
+        <h2>Hello RestaurantOwner</h2>
+    </div>
     <button class="btn btn-primary" (click)="authService.logout()">LogOut</button>
-</div>
+</div> -->
 

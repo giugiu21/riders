@@ -1,3 +1,4 @@
+import { RestaurantOwner } from './../../models/restaurant-owner.model';
 import { UserService } from './../../services/user.service';
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
@@ -15,7 +16,7 @@ import { pipe, take } from 'rxjs';
 export class HomeComponent {
 
   loginError: string;
-  user: any;
+  
 
   constructor(
     public authService: AuthService,
@@ -42,13 +43,18 @@ export class HomeComponent {
     };
     this.authService.login(user.username, user.password).subscribe({
       next: (res) =>{
-        this.user = res;
         if(res){
           this.authService.saveStorage(res);
           
           //this.messageService.add({severity: 'success', summary: 'Success!', detail: 'Il Login è andato a buon fine', life: 3000});
 
-          this.router.navigate(['home']);
+          if(res.rider_Id != 0){
+            this.router.navigate(['rider-home']);
+          }
+        
+          if(res.restaurantOwner_Id != 0){
+            this.router.navigate(['owner-home']);
+          }
         }
         else{
           this.loginError = "Email o password errati";
@@ -60,7 +66,9 @@ export class HomeComponent {
         this.loginError = "Email o password errati";
        // this.messageService.add({severity: 'error', summary: 'Errore!', detail: 'Il Login non è andato a buon fine', life: 3000});
       }
-  }); 
+  });
+  
+  
 }  
 
 onSubmitRegistration(){

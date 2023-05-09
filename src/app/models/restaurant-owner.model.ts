@@ -1,7 +1,7 @@
 import { Restaurant } from "./restaurant.model";
 
 export interface RestaurantOwner{
-    _id: string;
+    _id: number;
     phoneNumber: string;
     firstName: string;
     lastName: string;
